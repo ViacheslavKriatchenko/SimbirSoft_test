@@ -1,7 +1,7 @@
 class TaskPageLocators:
 
     NAME_FIELD = ('id', 'name-input')
-    PASSWORD_FIELD = ('css-selector', 'input[type=password]')
+    PASSWORD_FIELD = ('xpath', '//input[@type="password"]')
     CHECHBOXEX = ('xpath', '//input[@type="checkbox"]')
     MILK_CHECKBOX = ('xpath', '//input[@type="checkbox" and @value="Milk"]')
     COFFEE_CHECKBOX = ('xpath', '//input[@type="checkbox" and @value="Coffee"]')
@@ -9,9 +9,8 @@ class TaskPageLocators:
     YELLOW_BUTTON = ('xpath', '//input[@type="radio" and @value="Yellow"]')
     SELECTS = ('xpath', '//select[@name="automation"]')
     EMAIL_FIELD = ('xpath', '//input[@id="email"]')
-    SUBMIT_BUTTON = ('xpath', '//button[@id="submit-btn"]')
     DROPDOWN_ELEMENT = ('xpath', '//select[@id="automation"]')
-    EMAIL_FIELD = ('xpath', '//input[@id="email"]')
     MESSAGE_FIELD = ('xpath', '//textarea[@id="message"]')
     TOOLS_LIST = ('xpath', '//label/following-sibling::ul')
     TOOLS_ELEMENTS = ('xpath', '//label/following-sibling::ul/li')
+    SUBMIT_BUTTON = ('xpath', '//button[@id="submit-btn"]')

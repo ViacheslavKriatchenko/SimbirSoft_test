@@ -1,5 +1,4 @@
 from pages.main import MainPage
-import time
 import pytest
 from config.locators import TaskPageLocators
 
@@ -13,7 +12,7 @@ def test(driver):
     main = MainPage(driver)
     main.open_the_page()
     main.input_data(Locators.NAME_FIELD, data=name)
-    #main.input_data(Locators.PASSWORD_FIELD, data=password)
+    main.input_data(Locators.PASSWORD_FIELD, data=password)
     main.radio_box_select(Locators.MILK_CHECKBOX)
     main.radio_box_select(Locators.COFFEE_CHECKBOX)
     main.scroll_to(Locators.YELLOW_BUTTON)
@@ -25,4 +24,7 @@ def test(driver):
     main.scroll_to(Locators.MESSAGE_FIELD)
     main.input_data(Locators.MESSAGE_FIELD, data=main.count_tools(Locators.TOOLS_LIST))
     main.input_data(Locators.MESSAGE_FIELD, data=main.big(Locators.TOOLS_ELEMENTS))
-    time.sleep(5)
+    main.scroll_to(Locators.SUBMIT_BUTTON)
+    main.click(Locators.SUBMIT_BUTTON)
+    text = main.take_alert()
+    assert text == "Message received!", "Ошибка"

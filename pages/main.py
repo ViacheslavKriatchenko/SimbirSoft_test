@@ -57,3 +57,13 @@ class MainPage:
         tools = (el.text for el in li_els)
         longest = max(tools, key=len)
         return f'Наибольшее кол-во символов в - {longest}'
+
+    def click(self, locator):
+        self.wait.until(EC.element_to_be_clickable(locator)).click()
+
+    def take_alert(self):
+        alert = self.wait.until(EC.alert_is_present())
+        self.driver.switch_to.alert
+        text = alert.text
+        alert.accept()
+        return text
