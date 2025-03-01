@@ -11,7 +11,7 @@ class TaskPageLocators:
     SELECTS = ("xpath", '//select[@name="automation"]')
     EMAIL_FIELD = ("xpath", '//input[@id="email"]')
     DROPDOWN_ELEMENT = ("xpath", '//select[@id="automation"]')
-    MESSAGE_FIELD = ("xpath", '//textarea[@id="message"]')
+    MESSAGE_FIELD = ("css selector", 'textarea[name=message]')
     TOOLS_LIST = ("xpath", "//label/following-sibling::ul")
     TOOLS_ELEMENTS = ("xpath", "//label/following-sibling::ul/li")
     SUBMIT_BUTTON = ("xpath", '//button[@id="submit-btn"]')
