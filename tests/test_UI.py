@@ -1,6 +1,6 @@
 from pages.main import MainPage
-import pytest
 from config.locators import TaskPageLocators
+import allure
 
 Locators = TaskPageLocators()
 name = "Slava"
@@ -8,6 +8,9 @@ password = "12345"
 email = "gotoauto@gmail.com"
 
 
+@allure.title('Работа с полями и формами')
+@allure.description('Заполняем форму, нажимаем кнопку, проверяем окно алерт')
+@allure.severity(severity_level="Critical")
 def test(driver):
     main = MainPage(driver)
     main.open_the_page()
@@ -27,4 +30,5 @@ def test(driver):
     main.scroll_to(Locators.SUBMIT_BUTTON)
     main.click(Locators.SUBMIT_BUTTON)
     text = main.take_alert()
-    assert text == "Message received!", "Ошибка"
+    with allure.step('Сверяем текст алерт окна с шаблоном'):
+        assert text == "Message received!", "Ошибка"

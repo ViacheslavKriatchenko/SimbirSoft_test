@@ -13,7 +13,6 @@
 ### Стэк:
 - Selenium
 - Webdriver-manager
-- Requests
 - PyTest
 - Allure
 
@@ -26,9 +25,9 @@
     - test_UI.py - UI тесты
 - conftest.py - фикстуры
 - global_options.ini - глобальные переменные
-- pytest.ini - настройка тестов
 - requirements.txt - настройка окружения
 - user_data.json - пользовательские данные
+- README.md - описание проекта
 
 ### Полезные ссылки:
 [Гайд по Markdown](https://www.markdownguide.org/basic-syntax/)  
